@@ -1,0 +1,27 @@
+    var post_article = document.querySelectorAll('.content__post');
+    var pos_arr = [];
+    for (let i = 0; i < post_article.length; i++) {
+        var pos_post = post_article[i].offsetTop;
+            pos_arr.push(pos_post);
+            window.addEventListener('scroll', function () {
+                var pos = window.pageYOffset;
+                if (pos > pos_post - 500) {
+                  post_article[i].classList.add('active');
+                } 
+            })
+    }
+    // function findmin(array) {
+    //     var store_arr = [],
+    //         minvalue = 10000;
+    //     for (let j = 0; j < array.length; j++) {
+    //         if (array[j] <= minvalue) {
+    //             minvalue = array[j];
+    //             store_arr.push(j);
+    //         }
+    //     }
+    //     return store_arr;
+    // }
+    // var first_post = findmin(pos_arr);
+    //     for (let i = 0; i < first_post.length; i++) {
+    //         post_article[first_post[i]].classList.add('active');
+    //     }
