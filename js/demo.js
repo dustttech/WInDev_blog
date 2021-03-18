@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded',function(){
     var mainbody = document.querySelector('body');
+
+    // SCROLL TO TOP
+    var scrollToTop = document.querySelector('.backtotop');
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 700) {
+            scrollToTop.classList.add('backtotopActive');
+        } else {
+            scrollToTop.classList.remove('backtotopActive');
+        }
+    })
+    
     // NAV/SEARCH MENU
         // TRIGGER
     var trigger_navmenu = document.querySelector('.header__trigger-menu'),
@@ -132,9 +144,8 @@ document.addEventListener('DOMContentLoaded',function(){
             var slide_wrapper = wrapper.querySelector('.post-slide'),        // get slide (ul)
                 bullet_wrapper = wrapper.querySelector('.post-slideOrder'),  // get bullet of slide (ul) 
                 cur_pos = 0,        // initial active position
-                isAnimation = false,  // var for prevent spamming click
-                slide_list ,
-                bullet_list;
+                isAnimation = false;  // var for prevent spamming click
+
             slide_wrapper.addEventListener('click',function () {   // wait for click event 
                 slide_child = this.children;    // ul child (all li)
                 bullet_child = bullet_wrapper.children; // same
