@@ -1,6 +1,23 @@
 document.addEventListener('DOMContentLoaded',function(){
     var mainbody = document.querySelector('body');
 
+
+    var main_content = document.querySelector('.main-wrapper');
+    var preload = document.querySelector('.preload-wrapper');
+    
+    main_content.style.opacity = "0";
+
+    window.addEventListener('load', function () {
+        setTimeout(() => {
+
+            preload.style.opacity = "0";
+            preload.style.zIndex = "-1";
+
+            main_content.style.opacity = "1";
+        }, 1000);
+        
+    })
+
     // SCROLL TO TOP
     var scrollToTop = document.querySelector('.backtotop');
 
@@ -26,6 +43,13 @@ document.addEventListener('DOMContentLoaded',function(){
         search_menu = document.querySelector('.header__search'), // search menu
         search_field = document.querySelector('.search__area input'); // input search field
 
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 800) {
+                mainbody.classList.remove('hide-scrollbar');
+                navmenu.classList.remove('active');
+            }
+        })
         // TRIGGER 
     trigger_navmenu.onclick = function () {
         navmenu.classList.add('active');
@@ -94,7 +118,6 @@ document.addEventListener('DOMContentLoaded',function(){
     // LOAD WHEN SCROLL INTO VIEW ANIMATION
     var post_article = document.querySelectorAll('.content__post'); // get all the post article
     var pos_arr = []; // array to store the location of all the post article
-
     // ADD active class for all the post that sit nearest to the top of the page (so the page don't look empty when load )
     window.onload = function () { // 
         for (let i = 0; i < post_article.length; i++) {  

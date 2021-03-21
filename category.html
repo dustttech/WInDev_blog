@@ -19,8 +19,12 @@
     <title>WindTech</title>
 </head>
 <body>
-
-
+        <!-- PRELOAD  -->
+        <div class="preload-wrapper">
+            <div class="lds-facebook"><div></div><div></div><div></div></div>
+        </div>
+        <!-- END PRELOAD -->
+    <div class="main-wrapper">
         <!-- HEADER -->
         <section class="page-header">
             <header class="header  header-static">
@@ -48,7 +52,7 @@
                         </li>
                     </ul>
                     <div class="header__logo">
-                        <a href="#">
+                        <a href="index.html">
                             WindTech
                             <i class="fas fa-wind    "></i>
                         </a>
@@ -65,21 +69,21 @@
                             <li class="dropdown active"><a href="#">Categories</a>
                                 <div class="dropdownMenu-collapsed collapsed">
                                     <ul class="dropdownMenu">
-                                        <li><a href="#">UI/UX</a></li>
-                                        <li><a href="#">Html</a></li>
-                                        <li><a href="#">Javascript</a></li>
-                                        <li><a href="#">Css</a></li>
-                                        <li><a href="#">Template</a></li>
-                                        <li><a href="#">Animation</a></li>
+                                        <li><a href="category.html">UI/UX</a></li>
+                                        <li><a href="category.html">Html</a></li>
+                                        <li><a href="category.html">Javascript</a></li>
+                                        <li><a href="category.html">Css</a></li>
+                                        <li><a href="category.html">Template</a></li>
+                                        <li><a href="category.html">Animation</a></li>
                                     </ul>
                                 </div>
                                 <ul class="dropdownMenu__hover">
-                                    <li><a href="#">UI/UX</a></li>
-                                    <li><a href="#">Html</a></li>
-                                    <li><a href="#">Javascript</a></li>
-                                    <li><a href="#">Css</a></li>
-                                    <li><a href="#">Template</a></li>
-                                    <li><a href="#">Animation</a></li>
+                                    <li><a href="category.html">UI/UX</a></li>
+                                    <li><a href="category.html">Html</a></li>
+                                    <li><a href="category.html">Javascript</a></li>
+                                    <li><a href="category.html">Css</a></li>
+                                    <li><a href="category.html">Template</a></li>
+                                    <li><a href="category.html">Animation</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="#">Blog</a>
@@ -87,20 +91,17 @@
                                     <ul class="dropdownMenu">
                                         <li><a href="standard-post.html">Standard Post</a></li>
                                         <li><a href="video-post.html">Video Post</a></li>
-                                        <li><a href="audio-post.html">Audio Post</a></li>
                                         <li><a href="gallery-post.html">Gallery Post</a></li>
                                     </ul>
                                 </div>
                                 <ul class="dropdownMenu__hover">
                                     <li><a href="standard-post.html">Standard Post</a></li>
                                     <li><a href="video-post.html">Video Post</a></li>
-                                    <li><a href="audio-post.html">Audio Post</a></li>
                                     <li><a href="gallery-post.html">Gallery Post</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Trending</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
                         </ul>
                         <a href="#" class="close"></a>
                     </div>
@@ -120,9 +121,9 @@
         <!-- END HEADER -->
         <!-- PAGE CONTENT -->
         <section class="page-content row">
-            <div class="content__heading">
-                <h1 class="heading__title">Category: Example.</h1>
-                <p class="heading__paragraph">Dolor similique vitae. Exercitationem quidem occaecati iusto. Id non vitae enim quas error dolor maiores ut. Exercitationem earum ut repudiandae optio veritatis animi nulla qui dolores.</p>
+            <div class="content__blog">
+                <h1 class="blog__title">Category: Example.</h1>
+                <p class="blog__paragraph">Dolor similique vitae. Exercitationem quidem occaecati iusto. Id non vitae enim quas error dolor maiores ut. Exercitationem earum ut repudiandae optio veritatis animi nulla qui dolores.</p>
             </div>
             <div class="content__post-wrapper">
                 <article class="content__post">
@@ -1049,8 +1050,8 @@
                             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae reprehenderit eligendi fugit non. Recusandae quibusdam pariatur monsectetur mollitia eius!
                         </p>
                         <form action="" class="footer-top__email-input">
-                            <input type="email" placeholder="Email Address">
-                            <input type="submit" value="send">
+                            <input class="footer__input" type="email" placeholder="Email Address">
+                            <input class="footer__submit" type="submit" value="send">
                         </form>
                     </div>
             </div>
@@ -1070,7 +1071,7 @@
             <i class="fa fa-chevron-up" aria-hidden="true"></i>
         </a>
         <!-- END BACK TO TOP -->
-
+    </div>
 
     <script src="js/demo.js"></script>
 </body>

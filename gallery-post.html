@@ -24,9 +24,7 @@
             <div class="lds-facebook"><div></div><div></div><div></div></div>
         </div>
         <!-- END PRELOAD -->
-
     <div class="main-wrapper">
-
         <!-- HEADER -->
         <section class="page-header">
             <header class="header  header-static">
@@ -91,15 +89,15 @@
                             <li class="dropdown active"><a href="#">Blog</a>
                                 <div class="dropdownMenu-collapsed collapsed">
                                     <ul class="dropdownMenu">
-                                        <li><a href="#">Standard Post</a></li>
+                                        <li><a href="standard-post.html">Standard Post</a></li>
                                         <li><a href="video-post.html">Video Post</a></li>
-                                        <li><a href="gallery-post.html">Gallery Post</a></li>
+                                        <li><a href="#">Gallery Post</a></li>
                                     </ul>
                                 </div>
                                 <ul class="dropdownMenu__hover">
-                                    <li><a href="#">Standard Post</a></li>
+                                    <li><a href="standard-post.html">Standard Post</a></li>
                                     <li><a href="video-post.html">Video Post</a></li>
-                                    <li><a href="gallery-post.html">Gallery Post</a></li>
+                                    <li><a href="#">Gallery Post</a></li>
                                 </ul>
                             </li>
                             <li><a href="about.html">About</a></li>
@@ -124,7 +122,7 @@
         <!-- PAGE CONTENT -->
         <section class="page-content">
             <div class="content__blog row">
-                <h1 class="blog__title">This Is A Standard Format Post.</h1>
+                <h1 class="blog__title">This Is A Gallery Format Post.</h1>
                 <div class="blog__details">
                     <span class="details__time">December 16, 2017</span>
                     In
@@ -134,7 +132,26 @@
                         <a href="#" class="details__category">UI/UX</a>
                     </div>
                 </div>
-                <img class="blog__img" src="img/article_bg/blog-img.jpg" alt="">
+                <div class="post-slideWrapper">
+                    <ul class="post-slide">
+                        <li class="active">
+                            <img src="img/article_bg/slide/slidepost.jpg" alt="">
+                        </li>
+                        <li>
+                            <img src="img/article_bg/slide/slidepost2.jpg" alt="">
+                        </li>
+                        <li>
+                            <img src="img/article_bg/slide/slidepost3.jpg" alt="">
+                        </li>
+                    </ul>
+                    <div class="post-orderWrapper">
+                        <ul class="post-slideOrder">
+                            <li class="active"></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="blog__wrapper">
                     <p class="blog__para blog__lead">
                         Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi est eu exercitation incididunt adipisicing veniam velit id fugiat enim mollit amet anim veniam dolor dolor irure velit commodo cillum sit nulla ullamco magna amet magna cupidatat qui labore cillum sit in tempor veniam consequat non laborum adipisicing aliqua ea nisi sint.
@@ -224,6 +241,7 @@
 
 
                 </div>
+
             </div>
             <div class="content__blog-comment">
                 <div class="blog-comment__wrapper row">
@@ -523,7 +541,7 @@
             <i class="fa fa-chevron-up" aria-hidden="true"></i>
         </a>
         <!-- END BACK TO TOP -->
-    </div>
+    </div>  
 
     <script src="js/demo.js"></script>
 </body>

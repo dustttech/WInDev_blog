@@ -45,7 +45,6 @@ html {
 body {
     background-color: #19191b;
     font-family: 'Roboto', sans-serif;
-    position: relative;
 }
 .hide-scrollbar {
     overflow: hidden;
@@ -88,7 +87,9 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
  input[type="search"]::-webkit-search-cancel-button,
  input[type="search"]::-webkit-search-results-button,
  input[type="search"]::-webkit-search-results-decoration { display: none; }
-
+textarea {
+    resize: none;
+}
  h1,h2,h3,h4,h5,h6 {
     font-family: var(--ff-title);
  }
@@ -101,6 +102,9 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
         padding-left: 40px;
         padding-right: 40px;
      }
+}
+.main-wrapper {
+    position: relative;
 }
 /* BACK TO TOP BTN */
 .backtotop {
@@ -123,7 +127,7 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
         padding-bottom: 0.2rem;
     }
     .backtotop:hover {
-        background-color: blue;
+        background-color: #0054a5;
         
     }
 .backtotopActive {
@@ -131,6 +135,58 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
     bottom: 30px;
 }
 /* END INITIAL SETTING */
+
+/* ===============PRELOAD==================== */
+.preload-wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;left: 0;
+    z-index: 9999;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease-in-out;
+}
+.lds-facebook {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: #fff;
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  .lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+  }
+  .lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+  }
+  .lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+  }
+  @keyframes lds-facebook {
+    0% {
+      top: 8px;
+      height: 64px;
+    }
+    50%, 100% {
+      top: 24px;
+      height: 32px;
+    }
+  }
+  
+/* ===============END PRELOAD==================== */
 
 /* ===============HEADER==================== */
 
@@ -806,13 +862,32 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
         max-width: 850px;
         margin: 0 auto;
     }
+    .blog__row {
+        padding-bottom: 5rem;
+    }
+    .blog__block {
+        padding-bottom: 2rem;
+    }
     .blog__title {
         font-size: 2rem;
         padding-bottom: 1rem;
         text-align: center;
 
     }
+    .comment__add > .blog__block-title {
+        padding-bottom: 2rem;
+    }
+    /* MAP */
+    #map {
+        width: 100%;
+        height: 500px;
+        margin: 3vh 0;
+    }
+
+    .blog__row,
     .blog__img,
+    .blog__video,
+    .content__blog > .post-slideWrapper,
     .blog__para,
     .blog__big-heading,
     .blog__small-heading,
@@ -825,21 +900,27 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
     .blog__list {
         padding-top: 2rem;
     }
+    /* BLOG IMG */
     .blog__img {
         width: 100%;
         display: block;
+    }
+    /* BLOG VIDEO */
+    .blog__video > .video{
+        width: 100%;
     }
     .blog__paragraph {
         color: rgba(0, 0, 0, 0.4);
         font-size: 1.4rem;
         line-height: 1.5;
         font-weight: 500;
+        padding-bottom: 5rem;
+        text-align: center;
     }
     .blog__details {
         color: var(--content-text);
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         text-align: center;
-
     }
         .details__time {
             display: inline-block;
@@ -854,6 +935,9 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
         line-height: 1.5;
         color: var(--content-text);
     }
+        .blog__para > span {
+            display: block;
+        }
     .blog__lead {
         color: black;
         font-weight: 500;
@@ -1068,7 +1152,52 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
                     .comment__reply:hover {
                         color: black;
                     }
-            
+                /* COMMENT ADD */
+                .comment__add {
+                    padding-bottom: 5rem;
+                }
+                .comment__add > .blog__title {
+                    padding-bottom: 2rem;
+                }
+                .input-field {
+                    width: 100%;
+                    margin-bottom: 2rem;
+                    text-align: left;
+                    padding: 1rem;
+                    outline: none;
+                    border: none;
+                    background-color: transparent;
+                    border-bottom: 2px solid rgba(34, 34, 34, 0.726);
+                    transition: 0.3s ease-in-out;
+                    font-family: var(--ff-title);
+                    font-size: 1.2rem;
+                }
+                .input-field::placeholder {
+                    text-align: left;
+                }
+                .input-field:focus {
+                    border-color: #0054a5;
+                    color: #0054a5;
+                }
+                .submit-content {
+                    width: 100%;
+                    outline: none;
+                    border: none;
+                    background-color: black;
+                    color: #fafafa;
+                    border-radius: 5px;
+                    padding: 1rem 0;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    transition: 0.3s ease-in-out;
+                }
+                .submit-content:hover {
+                    background-color: #0054a5;
+                }
+
     @media only screen and (min-width:500px){
         .details__wrapper {
             display: inline-block;
@@ -1084,8 +1213,19 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
         .comment__details {
             margin-left: 100px;
         }
+        .comment__add > .blog__title {
+            text-align: left;
+        }
     }
     @media only screen and (min-width:800px){
+        .blog__row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .blog__block {
+            width: 48%;
+        }
         .blog__author,
         .blog__control {
             flex-direction: row;
@@ -1107,7 +1247,6 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
         }
         .blog__details {
             font-size: 1.4rem;
-            padding-bottom: 5rem;
         }
             .details__wrapper {
                 display: inline-block;
@@ -1150,6 +1289,7 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
 }
     .post-image,
     .post-videoThumbnail {
+        display: block;
         position: relative;
         width: 100%;
         overflow: hidden;
@@ -1335,6 +1475,8 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
         font-size: 0.9rem;
     }
         .informations__date {
+            color: #656565;
+            display: block;
             margin-top: 40px;
             letter-spacing: 3px;
         }
@@ -1792,7 +1934,7 @@ input[type="email"], input[type="number"], input[type="search"], input[type="tex
     position: relative;
     margin-top: 5vh;
 }
-input[type="email"] {
+.footer__input {
     width: 100%;
     height: 3.5rem;
     outline: none;
@@ -1805,10 +1947,10 @@ input[type="email"] {
     color: white;
     padding: 20px 80px 20px 60px;
 }
-input[type="email"]::placeholder {
+.footer__input::placeholder {
     text-align: left;
 }
-input[type="submit"] {
+.footer__submit {
     position: absolute;
     top: 0;right: 0;
     width: 80px;
