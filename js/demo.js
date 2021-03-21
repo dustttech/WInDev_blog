@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded',function(){
     var mainbody = document.querySelector('body');
-
-
+    var post_wrapper = document.querySelectorAll('.post-wrapper');
+    console.log(post_wrapper);
     var main_content = document.querySelector('.main-wrapper');
     var preload = document.querySelector('.preload-wrapper');
     
@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded',function(){
             preload.style.zIndex = "-1";
 
             main_content.style.opacity = "1";
+            post_wrapper.forEach(element => {
+                element.classList.add('show__item');
+            });
         }, 1000);
         
     })

@@ -657,6 +657,8 @@ textarea {
     cursor: pointer;
     border-radius: 3px;
     transition: 0.3s ease-in-out;
+}
+.show__item {
     animation: showup 2s ease;
 }
 .post-wrapper::after {
