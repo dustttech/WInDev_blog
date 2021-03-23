@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded',function(){
     var mainbody = document.querySelector('body');
     var post_wrapper = document.querySelectorAll('.post-wrapper');
-    console.log(post_wrapper);
     var main_content = document.querySelector('.main-wrapper');
     var preload = document.querySelector('.preload-wrapper');
     
@@ -207,12 +206,10 @@ var videoThumbnail = document.querySelectorAll('.post-videoThumbnail');
     for (let i = 0; i < videoThumbnail.length; i++) {
         videoThumbnail[i].addEventListener('click',function () {
             video_wrapper[i].classList.add('active'); 
-            mainbody.classList.toggle('hide-scrollbar');
         })
         close_video[i].addEventListener('click',function () {
             video_wrapper[i].classList.remove('active');
             videoclip[i].pause(); // prevent the video keep playing when go into hidden state (just in case)
-            mainbody.classList.toggle('hide-scrollbar'); // over flow for body , to make the video player look more " clean "
         })
     }
     

@@ -40,7 +40,6 @@ html,body {
 html {
     font-size: 14px;
     scroll-behavior: smooth;
-
 }
 body {
     background-color: #19191b;
@@ -49,6 +48,8 @@ body {
 .hide-scrollbar {
     overflow: hidden;
 }
+
+
 ul {
     list-style-type: none;
 }
@@ -115,7 +116,7 @@ textarea {
     align-items: center;
     position: fixed;
     bottom: -100px;right: 20px;
-    z-index: 9999;
+    z-index: 800;
     background-color: black;
     color: #fafafa;
     border-radius: 50%;
